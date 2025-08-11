@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Enhanced Form — Accessible HTML5 Demo</title>
+  <meta name="description" content="A multi-section web page demonstrating lists, tables, media and a complete HTML5 form with native validation and accessibility features.">
+</head>
+<body>
+  <header>
+    <h1>Enhanced Form — Accessibility & HTML5 Validation Demo</h1>
+    <p>This page demonstrates semantic structure, lists, a table, media, and a complete HTML5 form that relies solely on native validation.</p>
+    <nav aria-label="Main navigation">
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#resources">Resources</a></li>
+        <li><a href="#signup">Sign up</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="about" aria-labelledby="about-heading">
+      <h2 id="about-heading">About this page</h2>
+      <p>Key features showcased below:</p>
+      <ul>
+        <li>Semantic HTML: header, main, section, footer.</li>
+        <li>Accessible form controls with labels and fieldsets/legends.</li>
+        <li>Native HTML5 validation using attributes like required, type, pattern, and minlength.</li>
+      </ul>
+
+      <h3>Ordered steps</h3>
+      <ol>
+        <li>Read the instructions in each fieldset.</li>
+        <li>Complete required fields marked with *.</li>
+        <li>Submit — client-side HTML5 validation will run automatically.</li>
+      </ol>
+    </section>
+
+    <section id="resources" aria-labelledby="resources-heading">
+      <h2 id="resources-heading">Resources table & media</h2>
+
+      <p>Example resources for new students:</p>
+      <table border="1" cellpadding="8" cellspacing="0">
+        <thead>
+          <tr>
+            <th>Resource</th>
+            <th>Description</th>
+            <th>Estimated cost (TZS)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Laptop</td>
+            <td>Affordable notebook for study and coding.</td>
+            <td>400,000</td>
+          </tr>
+          <tr>
+            <td>Internet bundle</td>
+            <td>Monthly data plan for research and submission.</td>
+            <td>50,000</td>
+          </tr>
+          <tr>
+            <td>Textbooks</td>
+            <td>Core textbooks or PDFs (used when possible).</td>
+            <td>60,000</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <figure>
+        <img src="https://via.placeholder.com/300x200.png?text=Study+Space" alt="A tidy study space with laptop and notebook">
+        <figcaption>Example tidy study space image</figcaption>
+      </figure>
+      <p>Watch this short sample video for study techniques:</p>
+      <video width="320" height="180" controls>
+        <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4">
+        Your browser does not support the video element.
+      </video>
+    </section>
+
+    <section id="signup" aria-labelledby="signup-heading">
+      <h2 id="signup-heading">Sign up form</h2>
+      <p>Complete this form. Fields marked with * are required. No JavaScript — HTML5 validation only.</p>
+
+      <form action="#" method="post" autocomplete="on">
+        <fieldset>
+          <legend>Personal information</legend>
+          <label for="firstName">First name *</label>
+          <input id="firstName" name="firstName" type="text" placeholder="Josephat" minlength="2" maxlength="40" required autocomplete="given-name">
+
+          <label for="lastName">Last name *</label>
+          <input id="lastName" name="lastName" type="text" placeholder="Mwoleka" minlength="2" maxlength="40" required autocomplete="family-name">
+
+          <label for="email">Email address *</label>
+          <input id="email" name="email" type="email" placeholder="you@example.com" required autocomplete="email">
+
+          <label for="phone">Phone number</label>
+          <input id="phone" name="phone" type="tel" placeholder="+255712345678" pattern="^\+?\d{7,15}$" title="Enter a valid phone number with country code, 7–15 digits" autocomplete="tel">
+
+          <label for="dob">Date of birth</label>
+          <input id="dob" name="dob" type="date" max="2006-12-31">
+        </fieldset>
+
+        <fieldset>
+          <legend>Account & security</legend>
+          <label for="username">Username *</label>
+          <input id="username" name="username" type="text" required placeholder="pick-a-username" minlength="4" maxlength="20" pattern="^[a-zA-Z0-9_-]+$" title="Only letters, numbers, hyphen and underscore">
+
+          <label for="password">Password *</label>
+          <input id="password" name="password" type="password" required minlength="8">
+
+          <label for="confirm">Confirm password *</label>
+          <input id="confirm" name="confirm" type="password" required minlength="8">
+        </fieldset>
+
+        <fieldset>
+          <legend>Preferences</legend>
+          <label for="major">Choose your major</label>
+          <select id="major" name="major">
+            <option value="">-- Select --</option>
+            <option value="cs">Computer Science</option>
+            <option value="econ">Economics</option>
+            <option value="eng">Engineering</option>
+          </select>
+
+          <label>Learning style</label>
+          <input type="radio" id="visual" name="learningStyle" value="visual"><label for="visual">Visual</label>
+          <input type="radio" id="auditory" name="learningStyle" value="auditory"><label for="auditory">Auditory</label>
+          <input type="radio" id="kinesthetic" name="learningStyle" value="kinesthetic"><label for="kinesthetic">Kinesthetic</label>
+
+          <label>Interests</label>
+          <input type="checkbox" id="coding" name="interests" value="coding"><label for="coding">Coding</label>
+          <input type="checkbox" id="design" name="interests" value="design"><label for="design">Design</label>
+          <input type="checkbox" id="research" name="interests" value="research"><label for="research">Research</label>
+        </fieldset>
+
+        <fieldset>
+          <legend>Attachments & short answers</legend>
+          <label for="portfolio">Portfolio URL</label>
+          <input id="portfolio" name="portfolio" type="url" placeholder="https://github.com/yourname">
+
+          <label for="cv">Upload CV (PDF, optional)</label>
+          <input id="cv" name="cv" type="file" accept="application/pdf">
+
+          <label for="bio">Short bio</label>
+          <textarea id="bio" name="bio" rows="4" maxlength="400" placeholder="Tell us a bit about yourself..."></textarea>
+
+          <input id="timezone" name="timezone" type="hidden" value="Africa/Dar_es_Salaam">
+        </fieldset>
+
+        <fieldset>
+          <legend>Consent & privacy</legend>
+          <input id="consent" name="consent" type="checkbox" required>
+          <label for="consent">I agree to the terms and privacy policy *</label>
+        </fieldset>
+
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Enhanced Form Demo — Built with semantic HTML5 and native validation.</p>
+  </footer>
+  
+</body>
+</html>
+
